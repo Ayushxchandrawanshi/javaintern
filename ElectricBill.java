@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+
+public class ElectricBill {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your total unit: ");
+        double unit = sc.nextDouble();
+        double bill = 50.0;
+
+        if (unit <= 100) {
+            bill = unit * 1.5;
+        } else if (unit <= 200) {
+            bill += 100 * 1.5 + (unit - 100) * 3.5;
+        } else {
+            bill += 100 * 1.5 + 100 * 3.5 + (unit - 200) * 5;
+        }
+
+        if (bill >= 2000) {
+            bill = bill * 1.1;
+        }
+
+        System.out.println("Your total bill: " + bill);
+        sc.close();
+    }
+
+}
